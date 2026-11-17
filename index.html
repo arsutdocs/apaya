@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Karinnn ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f2e8;
+    color: #536b82;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+/* OPENING */
+
+.opening {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle, #fffdf7, #e7eff3 65%, #d5e4ed);
+}
+
+.loading {
+    color: #829bb0;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 45px;
+    animation: fadeIn 2s ease;
+}
+
+.cat-main {
+    font-size: 60px;
+    margin-bottom: 25px;
+    animation: bounce 2s infinite;
+}
+
+.subtitle {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #829bb0;
+    margin-bottom: 20px;
+}
+
+.opening h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 8vw, 75px);
+    font-weight: 400;
+    color: #526d85;
+    margin-bottom: 20px;
+    animation: fadeUp 1.5s ease;
+}
+
+.description {
+    font-size: 14px;
+    color: #8195a5;
+    margin-bottom: 40px;
+}
+
+.open-button {
+    background: #9ebbd0;
+    color: white;
+    border: none;
+    padding: 17px 35px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 7px 20px #829bb033;
+    position: relative;
+    z-index: 5;
+}
+
+.open-button:hover {
+    background: #789bb7;
+    transform: translateY(-5px);
+}
+
+/* CAT DECORATIONS */
+
+.cat {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    animation: float 5s ease-in-out infinite;
+    opacity: 0.85;
+}
+
+.cat-1 { top: 8%; left: 8%; font-size: 35px; }
+.cat-2 { top: 18%; right: 12%; font-size: 28px; animation-delay: 1s; }
+.cat-3 { top: 40%; left: 5%; font-size: 30px; animation-delay: 2s; }
+.cat-4 { top: 65%; right: 7%; font-size: 38px; animation-delay: 1.5s; }
+.cat-5 { bottom: 8%; left: 17%; font-size: 27px; animation-delay: 3s; }
+.cat-6 { bottom: 12%; right: 20%; font-size: 32px; animation-delay: 2s; }
+.cat-7 { top: 30%; right: 25%; font-size: 20px; animation-delay: 1s; }
+.cat-8 { bottom: 30%; left: 22%; font-size: 25px; animation-delay: 2.5s; }
+.cat-9 { top: 12%; left: 45%; font-size: 22px; animation-delay: 1.5s; }
+.cat-10 { bottom: 5%; right: 45%; font-size: 24px; animation-delay: 3s; }
+.cat-11 { top: 55%; left: 12%; font-size: 20px; animation-delay: 1s; }
+.cat-12 { top: 75%; right: 25%; font-size: 26px; animation-delay: 2s; }
+.cat-13 { top: 5%; right: 38%; font-size: 24px; animation-delay: 2s; }
+.cat-14 { bottom: 20%; left: 40%; font-size: 22px; animation-delay: 1s; }
+.cat-15 { top: 48%; right: 5%; font-size: 25px; animation-delay: 3s; }
+.cat-16 { top: 85%; left: 5%; font-size: 28px; animation-delay: 2s; }
+.cat-17 { top: 85%; right: 8%; font-size: 30px; animation-delay: 1s; }
+.cat-18 { top: 25%; left: 30%; font-size: 20px; animation-delay: 3s; }
+.cat-19 { top: 10%; left: 70%; font-size: 23px; animation-delay: 2s; }
+.cat-20 { bottom: 15%; left: 70%; font-size: 30px; animation-delay: 1.5s; }
+
+/* MESSAGE SECTION */
+
+.message-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle, #fffdf7, #eaf1f3 65%, #dce9ee);
+}
+
+.message-card {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    padding: 65px 45px;
+    border: 1px solid #a9c1d355;
+    border-radius: 20px;
+    background: #fffdf7ed;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 50px #7795a51a;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1.2s ease;
+}
+
+.message-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message-label {
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: #8ba8bd;
+    margin-bottom: 25px;
+}
+
+.message-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 8vw, 70px);
+    font-weight: 400;
+    font-style: italic;
+    color: #58748d;
+    margin-bottom: 25px;
+}
+
+.message-cat {
+    font-size: 55px;
+    margin-bottom: 35px;
+    animation: bounce 2s infinite;
+}
+
+.message-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 2;
+    color: #71899b;
+    font-style: italic;
+    text-align: center;
+}
+
+.message-text p {
+    margin-bottom: 22px;
+}
+
+.message-text strong {
+    color: #58748d;
+    font-weight: 500;
+}
+
+.bottom-cat {
+    font-size: 38px;
+    margin-top: 30px;
+    animation: bounce 2s infinite;
+}
+
+.signature {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.9;
+    margin-top: 30px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #8ba8bd;
+}
+
+/* MUSIC BUTTON */
+
+.music-control {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 20;
+}
+
+.music-button {
+    border: 1px solid #a9c1d3;
+    background: #fffdf7;
+    color: #58748d;
+    padding: 13px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #526d8522;
+    transition: 0.3s;
+}
+
+.music-button:hover {
+    background: #dce9ee;
+    transform: translateY(-3px);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .cat {
+        font-size: 20px !important;
+    }
+
+    .message-card {
+        padding: 45px 23px;
+    }
+
+    .message-text {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .music-control {
+        bottom: 15px;
+        right: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC FILE -->
+
+<audio id="backgroundMusic" preload="auto">
+    <source src="music/jatuh-suka.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MUSIC CONTROL -->
+
+<div class="music-control">
+    <button class="music-button" id="musicButton" onclick="toggleMusic()">
+        ♫ MUSIC: OFF
+    </button>
+</div>
+
+<!-- OPENING -->
+
+<section class="opening" id="opening">
+
+    <span class="cat cat-1">🐈</span>
+    <span class="cat cat-2">🐱</span>
+    <span class="cat cat-3">🐈‍⬛</span>
+    <span class="cat cat-4">🐱</span>
+    <span class="cat cat-5">🐈</span>
+    <span class="cat cat-6">🐈‍⬛</span>
+    <span class="cat cat-7">🐱</span>
+    <span class="cat cat-8">🐈</span>
+    <span class="cat cat-9">🐈‍⬛</span>
+    <span class="cat cat-10">🐱</span>
+    <span class="cat cat-11">🐈</span>
+    <span class="cat cat-12">🐈‍⬛</span>
+    <span class="cat cat-13">🐱</span>
+    <span class="cat cat-14">🐈</span>
+    <span class="cat cat-15">🐱</span>
+    <span class="cat cat-16">🐈‍⬛</span>
+    <span class="cat cat-17">🐱</span>
+    <span class="cat cat-18">🐈</span>
+    <span class="cat cat-19">🐈‍⬛</span>
+    <span class="cat cat-20">🐱</span>
+
+    <p class="loading">Preparing something special...</p>
+
+    <div class="cat-main">🐱</div>
+
+    <p class="subtitle">A SPECIAL DAY FOR</p>
+
+    <h1>karinnn</h1>
+
+    <p class="description">
+        I made something for you.
+    </p>
+
+    <button class="open-button" onclick="openGift()">
+        🐾 OPEN YOUR GIFT
+    </button>
+
+</section>
+
+<!-- A LITTLE MESSAGE -->
+
+<section class="message-section hidden" id="message">
+
+    <span class="cat cat-1">🐈</span>
+    <span class="cat cat-2">🐱</span>
+    <span class="cat cat-3">🐈‍⬛</span>
+    <span class="cat cat-4">🐈</span>
+    <span class="cat cat-5">🐱</span>
+    <span class="cat cat-6">🐈‍⬛</span>
+    <span class="cat cat-7">🐱</span>
+    <span class="cat cat-8">🐈</span>
+    <span class="cat cat-9">🐈‍⬛</span>
+    <span class="cat cat-10">🐱</span>
+    <span class="cat cat-11">🐈</span>
+    <span class="cat cat-12">🐈‍⬛</span>
+    <span class="cat cat-13">🐱</span>
+    <span class="cat cat-14">🐈</span>
+    <span class="cat cat-15">🐱</span>
+    <span class="cat cat-16">🐈‍⬛</span>
+    <span class="cat cat-17">🐱</span>
+    <span class="cat cat-18">🐈</span>
+    <span class="cat cat-19">🐈‍⬛</span>
+    <span class="cat cat-20">🐱</span>
+
+    <div class="message-card" id="messageCard">
+
+        <p class="message-label">A LITTLE MESSAGE</p>
+
+        <h2>For You</h2>
+
+        <div class="message-cat">🐱</div>
+
+        <div class="message-text">
+
+            <p>
+                <strong>Barakallah Fi Umrik, Karinnn.</strong>
+            </p>
+
+            <p>
+                I know we've been separated by different cities,
+                but I've always been waiting for you to come home!
+                Meet you, your cat, and your grandma, because your
+                grandma is so welcoming to someone like me ahahaha.
+                I'll give you some surprises when you're finally
+                home for your birthdayy!
+            </p>
+
+            <p>
+                Semogaa panjang umur, sehat selaluu, dimurahkan
+                rezekinya, senyum teruss, ketemu kucing terus,
+                dan ketemu orang-orang yang bisa bikin Karin senangg.
+            </p>
+
+            <p>
+                Anak sebaik Karin harus dirayakan, u deserve it, hun.
+                Tetap jadi anomali yah, biar kucing banyak deket
+                sama Karin hehe.
+            </p>
+
+            <p>
+                We love you from here, Karinn.
+            </p>
+
+        </div>
+
+        <div class="bottom-cat">🐈‍⬛</div>
+
+        <p class="signature">
+            Dari Falih...
+        </p>
+
+    </div>
+
+</section>
+
+<script>
+
+// MUSIC SETTINGS
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+let musicOn = false;
+
+// GANTI WAKTU REFF DI SINI (DALAM DETIK)
+
+const chorusStart = 0;
+const chorusEnd = 30;
+
+// PLAY MUSIC
+
+function startMusic() {
+
+    music.currentTime = chorusStart;
+    music.volume = 0.5;
+
+    music.play().then(() => {
+
+        musicOn = true;
+        musicButton.innerHTML = "♫ MUSIC: ON";
+
+    }).catch(() => {
+
+        musicOn = false;
+        musicButton.innerHTML = "♫ MUSIC: OFF";
+
+    });
+
+}
+
+// MUSIC ON / OFF
+
+function toggleMusic() {
+
+    if (musicOn) {
+
+        music.pause();
+        musicOn = false;
+        musicButton.innerHTML = "♫ MUSIC: OFF";
+
+    } else {
+
+        if (
+            music.currentTime < chorusStart ||
+            music.currentTime >= chorusEnd
+        ) {
+            music.currentTime = chorusStart;
+        }
+
+        music.play().then(() => {
+
+            musicOn = true;
+            musicButton.innerHTML = "♫ MUSIC: ON";
+
+        }).catch(() => {
+
+            musicOn = false;
+            musicButton.innerHTML = "♫ MUSIC: OFF";
+
+        });
+
+    }
+
+}
+
+// LOOP CHORUS ONLY
+
+music.addEventListener("timeupdate", function() {
+
+    if (musicOn && music.currentTime >= chorusEnd) {
+
+        music.currentTime = chorusStart;
+        music.play();
+
+    }
+
+});
+
+// HANDLE END OF SONG
+
+music.addEventListener("ended", function() {
+
+    if (musicOn) {
+
+        music.currentTime = chorusStart;
+        music.play();
+
+    }
+
+});
+
+// OPEN GIFT
+
+function openGift() {
+
+    const opening = document.getElementById("opening");
+    const message = document.getElementById("message");
+    const card = document.getElementById("messageCard");
+
+    if (!musicOn) {
+        startMusic();
+    }
+
+    opening.style.transition = "opacity 0.8s ease";
+    opening.style.opacity = "0";
+
+    setTimeout(() => {
+
+        opening.classList.add("hidden");
+        message.classList.remove("hidden");
+
+        window.scrollTo(0, 0);
+
+        setTimeout(() => {
+
+            card.classList.add("show");
+
+        }, 300);
+
+    }, 800);
+
+}
+
+</script>
+const chorusStart = 145;
+const chorusEnd = 175;
+</body>
+</html>
